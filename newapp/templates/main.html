@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+<body>
+    <a href="/create-location">create location</a>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state</th>
+            <th>country</th>
+            <th>delete action</th>
+            <th>update action</th>
+        </tr>
+        {%for location in locations%}
+        <tr>
+            <td>{{location.name}}</td>
+            <td>{{location.address}}</td>
+            <td>{{location.city}}</td>
+            <td>{{location.state}}</td>
+            <td>{{location.country}}</td>
+            <td><a href="/update-location/{{location.id}}">update</a></td>
+            <td><a href="/delete-location/{{location.id}}">delete</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
